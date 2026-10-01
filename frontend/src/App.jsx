@@ -2,8 +2,10 @@ import { useEffect, useRef, useState } from "react";
 import { io } from "socket.io-client";
 import { QRCodeSVG } from "qrcode.react";
 
-const socket = io(`http://${window.location.hostname}:3000`);
-
+const socket = io(
+  import.meta.env.VITE_SOCKET_URL ||
+    `http://${window.location.hostname}:3000`
+);
 function App() {
   const [roomId, setRoomId] = useState("");
   const [joinCode, setJoinCode] = useState("");
