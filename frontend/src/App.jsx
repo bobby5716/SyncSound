@@ -4,7 +4,7 @@ import { QRCodeSVG } from "qrcode.react";
 
 const socket = io(
   import.meta.env.VITE_SOCKET_URL ||
-    `http://${window.location.hostname}:3000`
+    "https://syncsound-h34k.onrender.com"
 );
 function App() {
   const [roomId, setRoomId] = useState("");
